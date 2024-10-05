@@ -1,10 +1,9 @@
 mkdir -p ~/.streamlit/
 
-
 echo "\
-[sever]\n\
+[server]\n\
 port = $PORT\n\
-enableCORE = false\n\
+enableCORS = false\n\
 headless = true\n\
 \n\
-" > ~/.streamlit/credentials.toml
+" > ~/.streamlit/config.toml
