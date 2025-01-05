@@ -1,9 +1,9 @@
-name: Edit and Commit README
+name: Edit and Commit README Every 2 Minutes
 
 on:
+  workflow_dispatch:  # Allows manual triggering
   schedule:
-    # Run every 2 minutes
-    - cron: '*/2 * * * *'
+    - cron: '*/2 * * * *'  # Every 2 minutes
 
 jobs:
   edit-readme:
@@ -22,4 +22,5 @@ jobs:
         git config user.name "rahulrajmehra01"
         git config user.email "rahulrajmehra06@gmail.com"
         git add README.md
-        git commit -m "Random update:
+        git commit -m "Random update: $(date)" || echo "No changes to commit"
+        git push
